@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player with Glow Effect</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: aliceblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .video-container {
+            position: relative;
+            display: inline-block;
+            width: 560px;
+            height: 315px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .glow {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border-radius: 25px;
+            pointer-events: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Player with Glow Effect</h1>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZDj2Ifk0AV4?autoplay=1&mute=1&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="glow"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Video Player. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Chức năng ánh sáng giả có thể được thêm vào đây, nhưng không thể thao tác trực tiếp với video từ iframe.
+        // Ví dụ: có thể thay đổi màu sắc của hiệu ứng phát sáng khi video đang phát.
+        const glow = document.querySelector('.glow');
+        const setGlow = (isPlaying) => {
+            glow.style.backgroundColor = isPlaying ? 'rgba(255, 255, 255, 0.7)' : 'transparent'; // Chỉ là hiệu ứng giả
+        };
+
+        // Ví dụ: Gọi setGlow() để bắt đầu phát sáng khi video được phát.
+        setGlow(true); // Chỉ là một ví dụ để bắt đầu hiệu ứng
+
+        // Bạn cần theo dõi trạng thái video (phát, dừng, tạm dừng) bằng cách sử dụng API của YouTube (nếu cần).
+    </script>
+</body>
+</html>
